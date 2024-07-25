@@ -1,0 +1,14 @@
+# Use a imagem base do Python
+FROM python:3.9-slim
+
+# Defina o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copie o arquivo do Broker para o diretório de trabalho
+COPY interface.py .
+
+# Instale o Flask
+RUN pip install requests
+
+# Comando para iniciar o Broker
+CMD ["python", "interface.py"]
