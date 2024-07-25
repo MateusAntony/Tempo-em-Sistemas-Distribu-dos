@@ -1,0 +1,16 @@
+# Use a imagem base do Python
+FROM python:3.9-slim
+
+# Defina o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copie o arquivo do Broker para o diretório de trabalho
+COPY relogio_1.py .
+COPY relogio.py .
+
+# Instale o Flask
+RUN pip install flask
+RUN pip install requests
+
+# Comando para iniciar o Broker
+CMD ["python", "banco_a.py"]
